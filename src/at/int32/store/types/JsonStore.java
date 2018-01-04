@@ -36,8 +36,8 @@ public class JsonStore<T> implements IStore<String, T> {
 	@Override
 	public <M> M get(String key, Class<M> mClass) {
 		Object o = map.get(key);
-		
-		if(o == null)
+
+		if (o == null)
 			return null;
 
 		if (o.getClass() == LinkedTreeMap.class || mClass != null) {
@@ -96,5 +96,10 @@ public class JsonStore<T> implements IStore<String, T> {
 			m.put(key, (T) map.get(key));
 		}
 		return m;
+	}
+
+	@Override
+	public T remove(String key) {
+		return (T) this.map.remove(key);
 	}
 }

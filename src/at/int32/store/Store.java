@@ -34,7 +34,12 @@ public class Store implements IStore<String, Object> {
 	public boolean contains(String key) {
 		return this.store.contains(key);
 	}
-
+	
+	@Override
+	public Object remove(String key) {
+		return this.store.remove(key);
+	}
+	
 	@Override
 	public Store load() {
 		this.store.load();

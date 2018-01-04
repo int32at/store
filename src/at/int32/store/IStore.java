@@ -11,6 +11,8 @@ public interface IStore<T, K> {
 	public <M> M get(String key, Class<M> mClass);
 
 	public boolean contains(T key);
+	
+	public K remove(T key);
 
 	public IStore<T, K> load();
 
